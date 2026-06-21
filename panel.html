@@ -1,1 +1,88 @@
+<div class="panel" id="panelRoot">
 
+  <div class="header" id="headerRow">
+    <div class="h-left">
+      <div class="title" id="pTitle">SD-WAN Latência</div>
+      <div class="subtitle" id="pSub">Zabbix · aguardando dados...</div>
+    </div>
+  </div>
+
+  <div class="body-row">
+
+    <div class="side-col">
+
+      <div class="gauge-card" id="gaugeCard">
+        <svg class="gauge-ring" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="9"/>
+          <circle id="gaugeArc" cx="50" cy="50" r="40" fill="none" stroke="#4ade80" stroke-width="9"
+                  stroke-linecap="round" stroke-dasharray="0 251.2" transform="rotate(-90 50 50)"/>
+          <text id="gaugeVal" x="50" y="57" text-anchor="middle" font-size="22" font-weight="500" fill="#e2e8f0">—</text>
+        </svg>
+        <div class="gauge-meta">
+          <div class="gauge-thr" id="gaugeThr">limiar —ms</div>
+          <span class="badge b-nd" id="badge">—</span>
+        </div>
+      </div>
+
+      <div class="kpi-grid" id="kpiGrid">
+        <div>
+          <div class="kpi-lbl">Atual</div>
+          <div><span class="kpi-val" id="kCur">—</span><span class="kpi-unit">ms</span></div>
+        </div>
+        <div>
+          <div class="kpi-lbl">Média</div>
+          <div><span class="kpi-val" id="kAvg">—</span><span class="kpi-unit">ms</span></div>
+        </div>
+        <div>
+          <div class="kpi-lbl">Máximo</div>
+          <div><span class="kpi-val" id="kMax">—</span><span class="kpi-unit">ms</span></div>
+        </div>
+        <div>
+          <div class="kpi-lbl">Mínimo</div>
+          <div><span class="kpi-val" id="kMin">—</span><span class="kpi-unit">ms</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="chart-wrap" id="chartWrap">
+      <canvas id="mainChart" role="img"
+        aria-label="Gráfico de latência SD-WAN Mundivox wan1">
+      </canvas>
+      <div class="nodata" id="nodata">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="#3d4a5c" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8"  x2="12"    y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        sem dados do Zabbix
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer" id="footerRow">
+    <div class="legend">
+      <div class="li">
+        <div class="ll" style="background:#f97316;"></div>
+        <span id="metricLbl">SD-WAN [SLA_Mundivox]:[wan1] Latency</span>
+      </div>
+      <div class="li">
+        <div class="ld" style="background:#f87171;"></div>
+        <span>alerta &gt;<span id="thrLbl">55</span>ms</span>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="upd" id="upd">—</div>
+      <div class="dl-btn" id="dlBtn" title="Baixar como imagem" role="button" aria-label="Baixar painel como imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v12"/>
+          <path d="M7 10l5 5 5-5"/>
+          <path d="M5 21h14"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</div>
